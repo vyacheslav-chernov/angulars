@@ -1,7 +1,7 @@
 <div 
     fxLayout="row" fxLayoutAlign="center center" 
-    *ngIf="visible"
-    [ngClass]="{overkill:visible && overkill}">
+    *ngIf="isVisible"
+    [ngClass]="{overkill:isVisible && isOverkill, overwidget: isOverwidget}">
 
     <mat-spinner></mat-spinner>
 

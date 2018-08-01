@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'hc-spinner',
@@ -7,21 +7,38 @@ import { Component } from '@angular/core';
 })
 export class SpinnerComponent{
 
-    visible: boolean;
-    overkill: boolean;
+    @Input()
+    set visible( visible:boolean){
+        this.isVisible = visible;
+    }
+    private isVisible: boolean;
 
-    show() {
+    @Input() 
+    set overkill( overkill:boolean){
+        this.isOverkill = overkill;
+    }
+    private isOverkill: boolean;
 
-        this.visible = !(this.overkill = false);
+    @Input() 
+    set overwidget( overwidget:boolean){
+        this.isOverwidget = overwidget;
+    }
+    private isOverwidget: boolean;
 
+    show( ) {
+        this.isVisible = !(this.isOverkill = false);
+    }
+
+    showOverWidget( ) {
+        this.isVisible = this.isOverwidget = !(this.isOverkill = false);
     }
 
     hide() {
-        this.overkill = this.visible = false;
+        this.isOverkill = this.isVisible = this.isOverwidget = false;
     }
 
     showModal () {
-        this.overkill = this.visible = true;
+        this.isVisible = this.isOverkill = true;
     }
 
 }
