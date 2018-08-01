@@ -1,7 +1,7 @@
 
 ## Component for show material spinner by code call
 
-# May be defined in component if needed manage through a code
+### May be defined in component if needed manage through a code
 @ViewChild('spinner') spinnerComponentLayer: SpinnerComponent;
 
 ### Use in code of a component
